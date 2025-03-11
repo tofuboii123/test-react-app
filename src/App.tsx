@@ -3,8 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { MyComponent } from './components/MyComponent'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 function App() {
+
+  const queryClient = new QueryClient();
   const [count, setCount] = useState(0)
 
   const resetCount = () => setCount(0);
@@ -34,7 +37,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <MyComponent/>
+      <QueryClientProvider client={queryClient}>
+        <MyComponent/>
+      </QueryClientProvider>
     </>
   )
 }
