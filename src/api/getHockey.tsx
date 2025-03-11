@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { BASE_URL, CLIENT_CODE, CLIENT_KEY } from "./constants"
 import { BootstrapResponse } from "./models/hockeyModels";
-import fetch from "cross-fetch";
 
 const getRequestWithKeys = (url: URL): URL => {
     url.searchParams.append("key", CLIENT_KEY);
